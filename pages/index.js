@@ -19,6 +19,9 @@ const Home = () => {
             pulvinar viverra viverra. Praesent tristique laoreet nisl et
             posuere.
           </p>
+          <div className="flex justify-center xl:hidden relative">
+            <ProjecstBtn />
+          </div>
         </div>
       </div>
       <div>image</div>
