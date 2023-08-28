@@ -8,8 +8,8 @@ import { fadeIn } from "../variants";
 const Home = () => {
   return (
     <div className="bg-primary/60 h-full">
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/">
-        <div className="text-center felx flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
+        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
           <h1 className="h1">
             Transforming Ideas <br /> Into{" "}
             <span className="text-accent">Digital Reality</span>
