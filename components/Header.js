@@ -9,7 +9,7 @@ const Header = () => {
         <div>
           <Link href={"/"}>
             {" "}
-            <Image src={"/logo2.svg"} width={320} height={100} />{" "}
+            <Image src={"/logo9.svg"} width={320} height={100} />{" "}
           </Link>
         </div>
       </div>
