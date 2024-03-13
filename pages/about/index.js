@@ -41,33 +41,26 @@ const aboutData = [
       },
     ],
   },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
+
   {
     title: "experience",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
-      },
-      {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
+        title: "Web Developer - Freelance",
+        stage: "2020 - 2023",
       },
       {
         title: "Intern - University of Bremen",
-        stage: "2008 - 2010",
+        stage: "2018",
+      },
+    ],
+  },
+  {
+    title: "Awards",
+    info: [
+      {
+        title: "Best final Project Award - WBS Coding School",
+        stage: "2023",
       },
     ],
   },
@@ -75,16 +68,8 @@ const aboutData = [
     title: "credentials",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "Web Development Certification - WBS Coding School",
+        stage: "2023",
       },
     ],
   },
