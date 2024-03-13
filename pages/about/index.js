@@ -93,7 +93,7 @@ const aboutData = [
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div>
+    <div className=" h-full text-center py-32 bg-primary/30 xl:text-left">
       <Circles />
       <motion.div
         variants={fadeIn("right", 0.2)}
@@ -104,6 +104,26 @@ const About = () => {
       >
         <Avatar />
       </motion.div>
+      <div className=" mx-auto container h-full flex flex-col items-center xl:flex-row gap-x-6">
+        <div>text</div>
+        <div>
+          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
+            {aboutData.map((item, itemIndex) => {
+              return (
+                <div
+                  key={itemIndex}
+                  className={`${
+                    index === itemIndex &&
+                    "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
+                  } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
+                >
+                  {item.title}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
