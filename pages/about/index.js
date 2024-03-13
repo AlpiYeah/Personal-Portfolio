@@ -1,4 +1,3 @@
-// icons
 import {
   FaHtml5,
   FaCss3,
@@ -7,7 +6,11 @@ import {
   FaWordpress,
   FaFigma,
 } from "react-icons/fa";
-
+import react, { useState } from "react";
+import Avatar from "../../components/Avatar";
+import Circles from "../../components/Circles";
+import { fadeIn } from "../../variants";
+import { motion } from "framer-motion";
 import {
   SiNextdotjs,
   SiFramer,
@@ -15,14 +18,13 @@ import {
   SiAdobephotoshop,
 } from "react-icons/si";
 
-
 //  data
 const aboutData = [
   {
-    title: 'skills',
+    title: "skills",
     info: [
       {
-        title: 'Web Development',
+        title: "Web Development",
         icons: [
           <FaHtml5 />,
           <FaCss3 />,
@@ -34,62 +36,76 @@ const aboutData = [
         ],
       },
       {
-        title: 'UI/UX Design',
+        title: "UI/UX Design",
         icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
       },
     ],
   },
   {
-    title: 'awards',
+    title: "awards",
     info: [
       {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
+        title: "Webby Awards - Honoree",
+        stage: "2011 - 2012",
       },
       {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
+        title: "Adobe Design Achievement Awards - Finalist",
+        stage: "2009 - 2010",
       },
     ],
   },
   {
-    title: 'experience',
+    title: "experience",
     info: [
       {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: "UX/UI Designer - XYZ Company",
+        stage: "2012 - 2023",
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
+        title: "Web Developer - ABC Agency",
+        stage: "2010 - 2012",
       },
       {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+        title: "Intern - DEF Corporation",
+        stage: "2008 - 2010",
       },
     ],
   },
   {
-    title: 'credentials',
+    title: "credentials",
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: "Web Development - ABC University, LA, CA",
+        stage: "2011",
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: "Computer Science Diploma - AV Technical Institute",
+        stage: "2009",
       },
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
+        stage: "2006",
       },
     ],
   },
 ];
 
 const About = () => {
-  return <div>About</div>;
+  const [index, setIndex] = useState(0);
+  return (
+    <div>
+      <Circles />
+      <motion.div
+        variants={fadeIn("right", 0.2)}
+        initial="hidden"
+        exit="hidden"
+        animate="show"
+        className=" absolute hidden xl:flex bottom-0 -left-[370px]"
+      >
+        <Avatar />
+      </motion.div>
+    </div>
+  );
 };
 
 export default About;
