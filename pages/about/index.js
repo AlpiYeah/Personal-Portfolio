@@ -106,7 +106,7 @@ const About = () => {
       </motion.div>
       <div className="mx-auto container h-full flex flex-col items-center xl:flex-row gap-x-6 z-100">
         <div className=" flex-1 flex flex-col justify-center">text</div>
-        <div>
+        <div className=" flex flex-col w-full xl:max-w-[48%] h-[480px]:">
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
             {aboutData.map((item, itemIndex) => {
               return (
