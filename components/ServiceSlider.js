@@ -56,6 +56,12 @@ const ServiceSlider = () => {
           spaceBetween: 15,
         },
       }}
+      freeMode={true}
+      pagination={{
+        clickable: true,
+      }}
+      modules={{ freeMode, pagination }}
+      className="h-[240px] sm:h-[340px]"
     ></Swiper>
   );
 };
