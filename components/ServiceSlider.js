@@ -44,7 +44,20 @@ const serviceData = [
 ];
 
 const ServiceSlider = () => {
-  return <div>Service Slider</div>;
+  return (
+    <Swiper
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 15,
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+      }}
+    ></Swiper>
+  );
 };
 
 export default ServiceSlider;
