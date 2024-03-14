@@ -19,7 +19,9 @@ const Services = () => {
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
             </p>
           </div>
-          <ServiceSlider />
+          <div className=" w-full xl:max-w-[60%]">
+            <ServiceSlider />
+          </div>
         </div>
       </div>
       <Bulb />
