@@ -13,7 +13,8 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-// data
+import { FreeMode, Pagination } from "swiper";
+
 const serviceData = [
   {
     icon: <RxCrop />,
