@@ -5,7 +5,7 @@ export const workSlider = {
       images: [
         {
           title: "title",
-          path: "/thumb1 Cropped.png",
+          path: "/thumb1Cropped Cropped.png",
         },
         {
           title: "title",
@@ -18,26 +18,6 @@ export const workSlider = {
         {
           title: "title",
           path: "/thumb4 Cropped.png",
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: "title",
-          path: "/thumb4 Cropped.png",
-        },
-        {
-          title: "title",
-          path: "/thumb1 Cropped.png",
-        },
-        {
-          title: "title",
-          path: "/thumb2 Cropped.png",
-        },
-        {
-          title: "title",
-          path: "/thumb3 Cropped.png",
         },
       ],
     },
