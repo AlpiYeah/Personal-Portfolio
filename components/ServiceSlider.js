@@ -17,29 +17,29 @@ import { FreeMode, Pagination } from "swiper";
 
 const serviceData = [
   {
-    icon: <RxCrop />,
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <RxDesktop />,
+    title: "Development",
+    description: "Transforming visions of greatnesss into functional websites.",
   },
   {
     icon: <RxPencil2 />,
     title: "Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    icon: <RxDesktop />,
-    title: "Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Elevating online presence with captivating design.",
   },
   {
     icon: <RxReader />,
     title: "Copywriting",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Crafting compelling content that captivates eyes and minds.",
   },
   {
     icon: <RxRocket />,
     title: "SEO",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Boosting online visibility with proven strategies.",
+  },
+  {
+    icon: <RxCrop />,
+    title: "Branding",
+    description: "Defining identities through impactful branding strategies.",
   },
 ];
 
