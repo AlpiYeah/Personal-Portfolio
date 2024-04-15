@@ -1,9 +1,7 @@
-// components
 import WorkSlider from "../../components/WorkSlider";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 
-// framer motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
@@ -36,7 +34,6 @@ const Work = () => {
             </motion.p>
           </div>
 
-          {/* slider */}
           <motion.div
             variants={fadeIn("down", 0.6)}
             initial="hidden"

@@ -123,7 +123,6 @@ const About = () => {
             className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
           >
             <div className="flex flex-1 xl:gap-x-5">
-              {/* experience */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                   <CountUp start={0} end={6} duration={6} /> +
@@ -132,7 +131,7 @@ const About = () => {
                   Years of experience
                 </div>
               </div>
-              {/* clients */}
+
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                   <CountUp start={0} end={50} duration={6} /> +
@@ -141,7 +140,7 @@ const About = () => {
                   Satisfied clients
                 </div>
               </div>
-              {/* projects */}
+
               <div className="relative flex-1">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                   <CountUp start={0} end={80} duration={6} /> +
@@ -150,11 +149,10 @@ const About = () => {
                   Finished projects
                 </div>
               </div>
-              {/* awards */}
             </div>
           </motion.div>
         </div>
-        {/* info */}
+
         <motion.div
           variants={fadeIn("left", 0.4)}
           initial="hidden"

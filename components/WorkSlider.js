@@ -1,4 +1,3 @@
-// work slider data
 export const workSlider = {
   slides: [
     {
@@ -32,20 +31,15 @@ export const workSlider = {
   ],
 };
 
-// import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// import swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-// import required modules
 import { Pagination } from "swiper";
 
-// icons
 import { BsArrowRight } from "react-icons/bs";
-// next image
 import Image from "next/image";
 import Link from "next/link";
 
