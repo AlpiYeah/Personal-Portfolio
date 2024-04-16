@@ -1,13 +1,10 @@
-"use client";
-import { sendEmail } from "../../actions";
-import { useEffect } from "react";
-import { useFormState } from "react-dom";
 import Circles from "/components/Circles";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 import { fadeIn } from "../../variants";
 import React, { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -18,27 +15,32 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (name == "" && email == "") {
-      setLoading(false);
-      alert("Please enter both name & email id");
-      return false;
-    }
+    const formData = {
+      name,
+      email,
+      subject,
+      message,
+    };
 
-    const response = await fetch("/api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application.json",
-      },
-      body: JSON.stringify({ name, email }),
-    });
-    if (response.status === 200) {
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSubject("");
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/send",
+        formData
+      ); // Use Axios to post form data
+      if (response.status === 200) {
+        // Reset form fields on successful submission
+        setName("");
+        setEmail("");
+        setMessage("");
+        setSubject("");
+        alert("Message sent successfully!");
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error.response.data);
     }
   };
-
   return (
     <div className="h-full bg-primary/30">
       <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">

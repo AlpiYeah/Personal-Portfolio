@@ -1,26 +1,42 @@
+// Import necessary modules
 import { NextApiRequest, NextApiResponse } from "next";
 import { EmailTemplate } from "../../components/email-template";
 import { Resend } from "resend";
-import { NextResponse } from "next/server";
 
+// Initialize Resend instance
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request) {
-  try {
-    const body = await request.json();
-    console.log("body", body);
-    const { email, name, message, subject } = body;
-    const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: email,
-      subject: "Hello world",
-      react: EmailTemplate({ firstName: name }),
-    });
-    if (data.status === "success") {
-      return NextResponse.json({ message: "Email successfully sent!" });
+// Define the handler function for POST requests
+export default async function handler(req, res) {
+  if (req.method === "POST") {
+    // Ensure that the request method is POST
+    try {
+      // Parse the request body as JSON
+      const { email, name, message, subject } = req.body;
+
+      // Send email using Resend
+      const data = await resend.emails.send({
+        from: "Acme <onboarding@resend.dev>",
+        to: email,
+        subject: "Hello world",
+        react: EmailTemplate({ name }),
+      });
+
+      // Check the status of the email sending operation
+      if (data.status === "success") {
+        // Return success response
+        res.status(200).json({ message: "Email successfully sent!" });
+      } else {
+        // Return error response
+        res.status(500).json(data);
+      }
+    } catch (error) {
+      // Handle any errors that occur during the process
+      console.error("Error sending email:", error);
+      res.status(500).json({ error: "Failed to send email" });
     }
-    return NextResponse.json(data);
-  } catch (error) {
-    console.log("error", error);
+  } else {
+    // Return 405 Method Not Allowed for other request methods
+    res.status(405).json({ error: "Method Not Allowed" });
   }
 }

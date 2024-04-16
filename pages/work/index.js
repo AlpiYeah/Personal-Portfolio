@@ -1,7 +1,3 @@
-"use client";
-import { sendEmail } from "@/actions";
-import { useEffect } from "react";
-import { useFormState } from "react-dom";
 import WorkSlider from "../../components/WorkSlider";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
