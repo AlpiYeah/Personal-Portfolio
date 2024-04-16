@@ -33,7 +33,6 @@ const Work = () => {
               eveniet dignissimos distinctio tempore harum laudantium.
             </motion.p>
           </div>
-
           <motion.div
             variants={fadeIn("down", 0.6)}
             initial="hidden"
