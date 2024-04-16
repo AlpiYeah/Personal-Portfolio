@@ -6,24 +6,32 @@ import { fadeIn } from "../../variants";
 import React, { useState } from "react";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [subject, setSubject] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const { name, email, subject, message } = Object.fromEntries(data);
+
+    if (name == "" && email == "") {
+      setLoading(false);
+      alert("Please enter both name & email id");
+      return false;
+    }
 
     const response = await fetch("/api/send", {
       method: "POST",
       headers: {
         "Content-Type": "application.json",
       },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        message: message,
-        subject: subject,
-      }),
+      body: JSON.stringify({ name, email }),
     });
     if (response.status === 200) {
+      setName("");
+      setEmail("");
+      setMessage("");
+      setSubject("");
     }
   };
 
@@ -53,31 +61,38 @@ const Contact = () => {
             {/* input group */}
             <div className="flex gap-x-6 w-full">
               <input
-                type="name"
-                required
-                name="name"
+                type="text"
+                autoComplete="name"
+                value={name}
                 placeholder="name"
                 className="input"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
               />
               <input
-                type="email"
-                required
-                email="email"
+                type="text"
+                name="email"
                 placeholder="email"
+                value={email}
+                autoComplete="email"
                 className="input"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <input
               type="text"
-              subject="subject"
               placeholder="subject"
+              name="subject"
+              value={subject}
               className="input"
+              onChange={(e) => setSubject(e.target.value)}
             />
             <textarea
-              required
-              message="message"
               placeholder="message"
+              name="message"
+              value={message}
               className="textarea"
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <button
               type="submit"

@@ -14,6 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/send.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/api/send.ts",
+    "pages/contact/index.js",
+    "pages/contact/index.js"
+  ],
   "exclude": ["node_modules"]
 }
