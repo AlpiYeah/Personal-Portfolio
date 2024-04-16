@@ -1,3 +1,7 @@
+"use client";
+import { sendEmail } from "../../actions";
+import { useEffect } from "react";
+import { useFormState } from "react-dom";
 import Circles from "/components/Circles";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
