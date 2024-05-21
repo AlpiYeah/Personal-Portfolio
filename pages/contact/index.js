@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import React, { useState } from "react";
 import axios from "axios";
+import { Toaster, useToaster, toast } from "react-hot-toast";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -13,6 +14,25 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
 
   const handleSubmit = async (e) => {
+    toast.loading("Please wait...", {
+      style: {
+        borderRadius: "10px",
+        background: "#291e4d",
+        color: "#fff",
+      },
+    });
+
+    setTimeout(() => {
+      toast.success("E-mail was sent successfully!", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          background: "#291e4d",
+          color: "#fff",
+        },
+      });
+    }, 2000);
+
     e.preventDefault();
 
     const formData = {
@@ -23,9 +43,8 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post("/api/send", formData); // Use Axios to post form data
+      const response = await axios.post("/api/send", formData);
       if (response.status === 200) {
-        // Reset form fields on successful submission
         setName("");
         setEmail("");
         setMessage("");
@@ -40,8 +59,13 @@ const Contact = () => {
   };
   return (
     <div className="h-full bg-primary/30">
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          duration: 2000,
+        }}
+      />
       <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
-        {/* text & form */}
         <div className="flex flex-col w-full max-w-[700px]">
           <motion.h2
             variants={fadeIn("up", 0.2)}
@@ -52,7 +76,7 @@ const Contact = () => {
           >
             Let's <span className="text-accent">connect.</span>
           </motion.h2>
-          {/* form */}
+
           <motion.form
             onSubmit={handleSubmit}
             variants={fadeIn("up", 0.4)}

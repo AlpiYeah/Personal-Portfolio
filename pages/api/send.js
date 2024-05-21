@@ -17,9 +17,9 @@ export default async function handler(req, res) {
       // Send email using Resend
       const data = await resend.emails.send({
         from: "Acme <onboarding@resend.dev>",
-        to: email,
+        to: "alpersyuleyman2002@gmail.com",
         subject: subject,
-        react: EmailTemplate({ name, subject, message }),
+        react: EmailTemplate({ name, subject, message, email }),
       });
 
       // Check the status of the email sending operation
