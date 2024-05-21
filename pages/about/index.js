@@ -110,9 +110,9 @@ const About = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I began freelancing as a developer. Since then, I've
-            done remote work for agencies, counsulted for startups, and
-            collaborated on digital products for business and consumer use.
+            3 years ago, I began freelancing as a developer. Since then, I've
+            done remote work for agencies, helped local businesses, and
+            collaborated on digital products for both business and private use.
           </motion.p>
 
           <motion.div

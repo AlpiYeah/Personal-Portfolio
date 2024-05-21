@@ -25,11 +25,11 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-5"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            pulvinar viverra viverra. Praesent tristique laoreet nisl et
-            posuere.
+            Blending innovation with aesthetics, I create digital solutions that
+            are intuitive, impactful, and inspiring. Let's shape the future, one
+            pixel at a time.
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjecstBtn />
