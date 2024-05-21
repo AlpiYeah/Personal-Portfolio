@@ -23,10 +23,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/send",
-        formData
-      ); // Use Axios to post form data
+      const response = await axios.post("/api/send", formData); // Use Axios to post form data
       if (response.status === 200) {
         // Reset form fields on successful submission
         setName("");
